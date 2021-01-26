@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #report-header {
+            text-align: center;
+        }
+        h1  {
+            font-size: 2rem;
+        }
+        .abstract {
+            width: 80vw;
+        }
+        article {
+            margin: 1rem;
+        }
+        backquote {
+            font-style: italic;
+            margin-left: 2rem;
+            padding: 1rem;
+            background-color: rgba(0, 0, 0, 0.1);
+            display: block;
+        }
+        p {
+            text-indent: 1em;
+        }
+        .
+    </style>
+</head>
+<body>
+<header id="report-header">
+    <h1>
+        一様多面体のための一様な解法<sup>*</sup>
+    </h1>
+    <cite>
+        Zvi Har’El
+    </cite>
+    <addresss>
+        Department of Mathematics<br>
+        Technion − Israel Institute of Technology<br>
+        Haifa 32000, Israel<br>
+        E-Mail: rl@math.technion.ac.il<br>
+    </addresss>
+    <small>
+        <sup>*</sup> 空間構造を紹介してくれた父Gershon Har'Elを偲んで。
+        Geometriae Dedicata 47: 57-110, 1993.
+    </small>
+</header>
+<article class="abstract">
+    <header>
+        <h2>
+            概要
+        </h2>
+    </header>
+    <p>
+        一様多面体とその双対の任意の精度の解法を提示する。解法は、万華鏡構造で与えられたすべての多面体に対して一様であり、各多面体を個別に「調べる」必要はない。
+    </p>
+</article>
+
+<article class="chapter">
+    <header>
+        <h2 class="chapter-title">
+            導入
+        </h2>
+    </header>
+    <p>
+        面が正則で頂点が等価な一様多面体は、古代から研究されてきた。最もよく知られているのは、5つの正多面体と13のアルキメデスの立体である。次に，一様な角柱と反角柱の2つの無限のファミリーがある。星型の面や頂点を考慮すると，4つのケプラー・ポアンソ正星形多面体と，1880年代から1930年代に発見された53個の非凸一様多面体の列がありる。この完全なセットは 1953年に Coxeter, Longuet-Higgins and Miller ([CLM], [S]も参照のこと)の論文で初めて示された。
+    </p>
+    <p>
+        1971年に出版されたMagnus Wenningerの楽しい本 <i>多面体模型</i> [W1]は、その後何度も復刻されてる。この本には75の一様多面体の段ボール模型の写真と作り方が記載されている。数学的思考を持つ読者がこの本を読む不思議に思うだろう。「モデルのデータはどのようにして得られるのだろうか? 例えば、1.1600030093は、辺の長さが2の<i>大反屈変形二十・十二面体</i><a
+            href="#annotation_1"><sup>1</sup></a>のための適切な外接球半径なのだろうか？」
+    </p>
+    <p>
+        これらのデータが [CLM, 表 7] のデータであることを確認するのは簡単である。いくつかの円周半径は整数と冪乗痕のみで与えられているので正確であるがこれは僅かで、ほとんどは上述のように小数点以下10桁の数字で与えられている。これで十分正確だと思われるかもしれないが、コンピュータのモデリングソフト（[Hy]など）に多面体を組み込む場合は、任意の精度で、あるいはコンピュータが扱える最大の精度で数値を取得したいと思うだろう。さらに，人は多面体の二面体角のような他の幾何学的データの正確な，あるいは最大精度の値に興味があるが，これらについては正則と凸の場合のデータしか利用できず，1′′の精度までである(cf. [CR, Table II]と[J, Table II]を参照)。
+    </p>
+    <p>
+        この問題はAndrew Humeが扱っている。彼の方法は、そのレポートの以下の短い引用によって最もよく説明されている。[Hm]。
+    </p>
+    <backquote>
+        一般に、データは多面体を調べて見つけた方程式の解である (例えば[L, pp.174-176]など)。方程式は記号代数系を用いて3回以上解いた...
+    </backquote>
+    <p>
+        記号代数系が有用な一様多面体は、いわゆるねじれ多面体であり、計算には3次方程式や4次方程式を解く必要がある。Humeの解は多面体のデータベースを作成するのに使われ、<i>netlib@research.att.com</i> で公開されている。
+    </p>
+    <p>
+        私たちのアプローチは全く異なる。個々の多面体を個別に調べるのではなく、以下のようなアプローチを提案する。手持ちの計算機でも理解しやすく使いやすいし、高速な反復アルゴリズムにより任意の精度のデータが得られる可能性があるため、一様多面体とその双対のデータベースを必要としない。さらに、非凸多面体（[Hm]では扱われない）だけでなく、凸多面体に対しても同様に容易に利用できる。<i>ftp@ftp.math.technion.ac.il</i>で公開されているコンピュータプログラム<i>kaleido</i> (cf. [Ha]) は、 頂点の配置、すなわち、頂点に面として現れる多面体の列挙 (cf. [CR, 2.9.2])、または多面体の万華鏡的構造を記述する、いわゆる <i>Wythoff記号</i> (cf. [CLM, 3]) のいずれかを与えられた場合に、一様多面体 (およびその双対) のデータを計算するために開発された。また、Kaleidoは、頂点座標と面座標を計算し、各多面体の回転するワイヤーフレーム画像を表示することができる。
+    </p>
+    <p>
+        H. S. M. Coxeter、Branko Grünbaum、Andrew Humeの各氏に感謝の意を表したい。
+    </p>
+    <small><sup id="annotation_1">1</sup> 多面体名の[W2]バージョンです。</small>
+</article>
+<article class="chapter">
+    <header>
+        <h2 class="chapter-title">
+            基本的なシステム
+        </h2>
+    </header>
+    <p>
+        一様な解法は、一様多面体を同心球上に投影し、球体タイルの各<i>n</i>辺のタイルを<i>2n</i>個の合同な球面直角三角形に分解し、三角関数方程式を設定して反復的に解いていくことに基づいている。解法アルゴリズムについては、次項で説明する。ここでは、基本三角形を特定し、基本方程式を設定する手順について述べる。
+    </p>
+    <p>
+        ここでは、凸の一様多面体を調べているとする。このような多面体は、それぞれの頂点に<i>m</i>個の面が集まる。<i>i</i>番目の面は通常シュレフリ記号<i>{n<sub>i</sub>}</i>で示される正<i>n<sub>i</sub></i>角形であるとする。環状リストlist <i>(n<sub>1</sub>, n<sub>2</sub>, ..., n<sub>m</sub>)</i>は頂点の配置である。
+    </p>
+    <p>
+        多面体を同心球に投影すると、球状のタイリングが得られる。頂点<i>C</i>を選び、<i>i = 1, ...., m</i>の場合の<i>A<sub>i</sub></i>を、<i>C</i>に集まる1番目のタイルの内心とする。また、<i>B<sub>i</sub></i>を、1番目のタイルと<i>(i + 1)</i>番目のタイル(<i>(m + 1)</i>番目が最初に識別される)を分ける円弧に対し、<i>A<sub>i</sub></i>から下ろした垂直な足との交点とする。実際には、球形多角形<i>A<sub>1</sub>A<sub>2</sub> ... A<sub>m</sub></i>は双対タイルの原形である（[GS,§1.2]参照）。また, 平面多角形<i>B<sub>1</sub>B<sub>2</sub> ... B<sub>m</sub></i>は<i>C</i>のいわゆる頂点図形である (cf. [C, 2.1]).
+    </p>
+    <p>
+        このようにして球面タイリングを分解し、基本三角形と呼ばれる直角な球面三角形にする。各頂点<i>C</i>には、<i>i = 1, ...., m</i>のために、<i>A<sub>i</sub>B<sub>i-1</sub>C</i>と<i>A<sub>i</sub>B<sub>i</sub>C</i>の対に配置された<i>2m</i>個の基本三角形が得られる。
+    </p>
+</article>
+</body>
+</html>

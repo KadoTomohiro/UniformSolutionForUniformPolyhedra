@@ -59,6 +59,39 @@
         small {
             display: block;
         }
+        table {
+            margin-top: 1rem;
+        }
+        table, caption, th, td {
+            border-collapse:collapse;
+            border: solid 1px black
+        }
+        caption {
+            border-bottom: none;
+        }
+        td {
+            padding: 0.3rem 0.5rem;
+            border-top: none;
+            border-bottom: none;
+        }
+        .st-index {
+            min-width: 2rem;
+        }
+        .st-symbol {
+            text-align: center;
+            min-width: 5rem;
+        }
+        .st-sides {
+            min-width: 5rem;
+            border-left: none;
+            border-right: none;
+        }
+        .st-splitting {
+            min-width: 7rem;
+        }
+        .st-relation {
+            min-width: 3rem;
+        }
     </style>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
     </script>
@@ -687,13 +720,579 @@
         <p>
             メビウス三角形から始めて、二面体シュワルツ三角形\(D_{\frac{d}{n}} = (2\  \frac{n}{d})\) (ただし、\(d = 1, \dots, n − 1\))の数え切れないほどのファミリーと、表1から3にリストされている四面体、八面体、二十面体の三角形を取得します。三角形は面積を増やすことによって配置されます。たとえば、\(I_{d}\)の面積は\(I_{1}\)の面積の\(d\)倍です。同じ面積の三角形が複数ある場合は、周囲長を大きくして並べ、\(I_{2a}\)と\(I_{2b}\)のように文字で区別します。側面は\(T_{1}\)と\(I_{1}\)の脚\(s\)、\(u\)、\(v\)で表されます<a href="#annotation_5"><sup>5</sup></a>。スペースを考慮して、各シュワルツの三角形を小さな三角形に分割するいくつかの方法の1つだけをリストします。興味深いことに、すべての三角形（最小のものを除く）は、1つだけ例外を除いて、常に2つの三角形に分割することができます。三直角三角形\(D_\frac{1}{2}\)は、当尺性のシュワルツの三角形と考えれば、4つ以上に分割することしかできません。リストされている分割は対称的なものです。正三角形\((\frac{5}{2}\ \frac{5}{2}\ \frac{5}{2})\)は、その半分の3つのコピーである直角三角形\((5\ \frac{5}{2}\ 2)\)で囲まれています。適切な対称サブグループに属する三角形にはフラグが付けられます。
         </p>
-            
         <aside>
             <small id="annotation_5">
                 5 \(\cos{2s} = -\frac{1}{3}\), \(\cos{2u} = \frac{\sqrt{5}}{3}\), \(\cos{2v} = \frac{\sqrt{5}}{5}\)であることが示される場合があります。
             </small>
         </aside>
+        <section>
+            <table>
+                <caption>
+                    Table 1: 正四面体対称群のシュワルツ三角形
+                </caption>
+                <thead>
+                    <tr>
+                        <th class="st-index"></th>
+                        <th class="st-symbol">記号</th>
+                        <th colspan="3" class="st-sides">辺</th>
+                        <th class="st-splitting">分割</th>
+                        <th class="st-relation"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="st-index">\(T_{1}\)</td>
+                        <td class="st-symbol">\((3\ 3\ 2)\)</td>
+                        <td class="st-sides">\(s\)</td>
+                        <td class="st-sides">\(s\)</td>
+                        <td class="st-sides">\(\pi-2s\)</td>
+                        <td class="st-splitting">\(\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(T_{2}\)</td>
+                        <td class="st-symbol">\((3\ 3\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(\pi-2s\)</td>
+                        <td class="st-sides">\(\pi-2s\)</td>
+                        <td class="st-sides">\(2s\)</td>
+                        <td class="st-splitting">\(2T_{1}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(T_{3}\)</td>
+                        <td class="st-symbol">\((3\ 2\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(s\)</td>
+                        <td class="st-sides">\(2s\)</td>
+                        <td class="st-sides">\(\pi-s\)</td>
+                        <td class="st-splitting">\(T_{1}+T_{2}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(T_{5}\)</td>
+                        <td class="st-symbol">\((2\ \frac{3}{2}\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(\pi-2s\)</td>
+                        <td class="st-sides">\(\pi-s\)</td>
+                        <td class="st-sides">\(\pi-s\)</td>
+                        <td class="st-splitting">\(T_{2}+T_{3}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(T_{6}\)</td>
+                        <td class="st-symbol">\((\frac{3}{2}\ \frac{3}{2}\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(2s\)</td>
+                        <td class="st-sides">\(2s\)</td>
+                        <td class="st-sides">\(2s\)</td>
+                        <td class="st-splitting">\(2T_{3}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+            <table>
+                <caption>
+                    Table 2: 正八面体対称群のシュワルツ三角形
+                </caption>
+                <thead>
+                    <tr>
+                        <th class="st-index"></th>
+                        <th class="st-symbol">記号</th>
+                        <th colspan="3" class="st-sides">辺</th>
+                        <th class="st-splitting">分割</th>
+                        <th class="st-relation"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="st-index">\(O_{1}\)</td>
+                        <td class="st-symbol">\((4\ 3\ 2)\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-s\)</td>
+                        <td class="st-sides">\(\frac{\pi}{4}\)</td>
+                        <td class="st-sides">\(s\)</td>
+                        <td class="st-splitting">\(\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(O_{2a}\)</td>
+                        <td class="st-symbol">\((3\ 3\ 2)\)</td>
+                        <td class="st-sides">\(s\)</td>
+                        <td class="st-sides">\(s\)</td>
+                        <td class="st-sides">\(\pi-2s\)</td>
+                        <td class="st-splitting">\(2O_{1}\)</td>
+                        <td class="st-relation">\(T_{1}\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(O_{2b}\)</td>
+                        <td class="st-symbol">\((4\ 4\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(s\)</td>
+                        <td class="st-sides">\(s\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}\)</td>
+                        <td class="st-splitting">\(2O_{1}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(O_{3}\)</td>
+                        <td class="st-symbol">\((4\ 2\ 2)\)</td>
+                        <td class="st-sides">\(\frac{\pi}{4}\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}\)</td>
+                        <td class="st-splitting">\(O_{1}+0_{2a}\)</td>
+                        <td class="st-relation">\(D_{\frac{1}{4}}\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(O_{4a}\)</td>
+                        <td class="st-symbol">\((3\ 3\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(\pi-2s\)</td>
+                        <td class="st-sides">\(\pi-2s\)</td>
+                        <td class="st-sides">\(2s\)</td>
+                        <td class="st-splitting">\(2O_{2a}\)</td>
+                        <td class="st-relation">\(T_{2}\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(O_{4b}\)</td>
+                        <td class="st-symbol">\((4\ 3\ \frac{4}{3})\)</td>
+                        <td class="st-sides">\(s\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}\)</td>
+                        <td class="st-sides">\(\pi-s\)</td>
+                        <td class="st-splitting">\(2O_{2a}+O_{2b}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(O_{5}\)</td>
+                        <td class="st-symbol">\((4\ 2\ \frac{4}{3})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-s\)</td>
+                        <td class="st-sides">\(\pi-s\)</td>
+                        <td class="st-sides">\(\frac{3\pi}{4}\)</td>
+                        <td class="st-splitting">\(O_{1}+O_{4b}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(O_{6a}\)</td>
+                        <td class="st-symbol">\((2\ 2\ 2)\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}\)</td>
+                        <td class="st-splitting">\(2O_{3}\)</td>
+                        <td class="st-relation">\(D_{\frac{1}{2}}\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(O_{6b}\)</td>
+                        <td class="st-symbol">\((3\ 2\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(s\)</td>
+                        <td class="st-sides">\(2s\)</td>
+                        <td class="st-sides">\(\pi-s\)</td>
+                        <td class="st-splitting">\(O_{2a}+O_{4a}\)</td>
+                        <td class="st-relation">\(T_{3}\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(O_{7}\)</td>
+                        <td class="st-symbol">\((3\ 2\ \frac{4}{3})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{4}\)</td>
+                        <td class="st-sides">\(\pi-s\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2} + s\)</td>
+                        <td class="st-splitting">\(O_{3}+O_{4b}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(O_{9}\)</td>
+                        <td class="st-symbol">\((2\ 2\ \frac{4}{3})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}\)</td>
+                        <td class="st-sides">\(\frac{3\pi}{4}\)</td>
+                        <td class="st-splitting">\(O_{4b}+O_{5}\)</td>
+                        <td class="st-relation">\(D_{\frac{3}{4}}\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(O_{10}\)</td>
+                        <td class="st-symbol">\((2\ \frac{3}{2}\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(\pi-2s\)</td>
+                        <td class="st-sides">\(\pi-s\)</td>
+                        <td class="st-sides">\(\pi-s\)</td>
+                        <td class="st-splitting">\(2O_{5}\)</td>
+                        <td class="st-relation">\(T_{5}\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(O_{11}\)</td>
+                        <td class="st-symbol">\((2\ \frac{3}{2}\ \frac{4}{3})\)</td>
+                        <td class="st-sides">\(s\)</td>
+                        <td class="st-sides">\(\frac{3\pi}{4}\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+s\)</td>
+                        <td class="st-splitting">\(O_{6b}+O_{5}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(O_{12}\)</td>
+                        <td class="st-symbol">\((\frac{3}{2}\ \frac{3}{2}\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(2s\)</td>
+                        <td class="st-sides">\(2s\)</td>
+                        <td class="st-sides">\(2s\)</td>
+                        <td class="st-splitting">\(2O_{6b}\)</td>
+                        <td class="st-relation">\(T_{6}\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(O_{14}\)</td>
+                        <td class="st-symbol">\((\frac{3}{2}\ \frac{4}{3}\ \frac{4}{3})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}\)</td>
+                        <td class="st-sides">\(\pi-s\)</td>
+                        <td class="st-sides">\(\pi-s\)</td>
+                        <td class="st-splitting">\(2O_{7}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                </tbody>
+            </table>
+    
+            <table>
+                <caption>
+                    Table 3: 正二十面体対称群のシュワルツ三角形
+                </caption>
+                <thead>
+                    <tr>
+                        <th class="st-index"></th>
+                        <th class="st-symbol">記号</th>
+                        <th colspan="3" class="st-sides">辺</th>
+                        <th class="st-splitting">分割</th>
+                        <th class="st-relation"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="st-index">\(I_{1}\)</td>
+                        <td class="st-symbol">\((5\ 3\ 2)\)</td>
+                        <td class="st-sides">\(u\)</td>
+                        <td class="st-sides">\(v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u-v\)</td>
+                        <td class="st-splitting">\(\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{2a}\)</td>
+                        <td class="st-symbol">\((3\ 3\ \frac{5}{2})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u-v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u-v\)</td>
+                        <td class="st-sides">\(2u\)</td>
+                        <td class="st-splitting">\(2I_{1}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{2b}\)</td>
+                        <td class="st-symbol">\((5\ 5\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u-v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u-v\)</td>
+                        <td class="st-sides">\(2v\)</td>
+                        <td class="st-splitting">\(2I_{1}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{3}\)</td>
+                        <td class="st-symbol">\((5\ \frac{5}{2}\ 2)\)</td>
+                        <td class="st-sides">\(v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-v\)</td>
+                        <td class="st-sides">\(2v\)</td>
+                        <td class="st-splitting">\(I_{1}+I_{2b}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{4}\)</td>
+                        <td class="st-symbol">\((5\ 3\ \frac{5}{3})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u-v\)</td>
+                        <td class="st-sides">\(2v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u-v\)</td>
+                        <td class="st-splitting">\(I_{2a}+I_{2b}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{6a}\)</td>
+                        <td class="st-symbol">\((\frac{5}{2}\ \frac{5}{2}\ \frac{5}{2})\)</td>
+                        <td class="st-sides">\(2v\)</td>
+                        <td class="st-sides">\(2v\)</td>
+                        <td class="st-sides">\(2v\)</td>
+                        <td class="st-splitting">\(2I_{3}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{6b}\)</td>
+                        <td class="st-symbol">\((5\ 3\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(2u\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u-v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u+v\)</td>
+                        <td class="st-splitting">\(I_{2a}+I_{4}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{6c}\)</td>
+                        <td class="st-symbol">\((5\ 5\ \frac{5}{4})\)</td>
+                        <td class="st-sides">\(2v\)</td>
+                        <td class="st-sides">\(2v\)</td>
+                        <td class="st-sides">\(\pi-2v\)</td>
+                        <td class="st-splitting">\(2I_{3}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{7}\)</td>
+                        <td class="st-symbol">\((3\ \frac{5}{2}\ 2)\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u-v\)</td>
+                        <td class="st-splitting">\(I_{3}+I_{4}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{8}\)</td>
+                        <td class="st-symbol">\((5\ \frac{5}{2}\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u-v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u+v\)</td>
+                        <td class="st-sides">\(\pi-2v\)</td>
+                        <td class="st-splitting">\(I_{2a}+I_{6b}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{9}\)</td>
+                        <td class="st-symbol">\((5\ 2\ \frac{5}{3})\)</td>
+                        <td class="st-sides">\(v\)</td>
+                        <td class="st-sides">\(\pi-2v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+v\)</td>
+                        <td class="st-splitting">\(I_{3}+I_{6c}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{10a}\)</td>
+                        <td class="st-symbol">\((3\ \frac{5}{2}\ \frac{5}{3})\)</td>
+                        <td class="st-sides">\(2v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u-v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u+v\)</td>
+                        <td class="st-splitting">\(I_{4}+I_{6a}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{10b}\)</td>
+                        <td class="st-symbol">\((5\ 3\ \frac{5}{4})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u-v\)</td>
+                        <td class="st-sides">\(\pi-2v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u+v\)</td>
+                        <td class="st-splitting">\(I_{4}+I_{6c}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{11}\)</td>
+                        <td class="st-symbol">\((5\ 2\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(u\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u+v\)</td>
+                        <td class="st-sides">\(\pi-v\)</td>
+                        <td class="st-splitting">\(I_{1}+I_{10b}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{13}\)</td>
+                        <td class="st-symbol">\((3\ 2\ \frac{5}{3})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u+v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u\)</td>
+                        <td class="st-splitting">\(I_{6b}+I_{7}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{14a}\)</td>
+                        <td class="st-symbol">\((\frac{5}{2}\ \frac{5}{2}\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u-v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u-v\)</td>
+                        <td class="st-sides">\(\pi-2v\)</td>
+                        <td class="st-splitting">\(2I_{7}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{14b}\)</td>
+                        <td class="st-symbol">\((3\ 3\ \frac{5}{4})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u-v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u-v\)</td>
+                        <td class="st-sides">\(\pi-2u\)</td>
+                        <td class="st-splitting">\(2I_{7}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{15}\)</td>
+                        <td class="st-symbol">\((2\ 2\ 2)\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}\)</td>
+                        <td class="st-splitting">\(I_{6a}+3I_{3}\)</td>
+                        <td class="st-relation">\(D_{\frac{1}{2}}\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{16}\)</td>
+                        <td class="st-symbol">\((3\ \frac{5}{2}\ \frac{5}{4})\)</td>
+                        <td class="st-sides">\(2v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u+v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u+v\)</td>
+                        <td class="st-splitting">\(I_{6a}+I_{10a}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{17}\)</td>
+                        <td class="st-symbol">\((\frac{5}{2}\ 2\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u+v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+v\)</td>
+                        <td class="st-splitting">\(I_{8}+I_{9}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{18a}\)</td>
+                        <td class="st-symbol">\((\frac{5}{2}\ \frac{5}{3}\ \frac{5}{3})\)</td>
+                        <td class="st-sides">\(2v\)</td>
+                        <td class="st-sides">\(\pi-2v\)</td>
+                        <td class="st-sides">\(\pi-2v\)</td>
+                        <td class="st-splitting">\(2I_{9}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{18b}\)</td>
+                        <td class="st-symbol">\((3\ \frac{5}{3}\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u-v\)</td>
+                        <td class="st-sides">\(\pi-2u\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u+v\)</td>
+                        <td class="st-splitting">\(I_{8}+I_{10b}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{19}\)</td>
+                        <td class="st-symbol">\((3\ 2\ \frac{5}{4})\)</td>
+                        <td class="st-sides">\(v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u+v\)</td>
+                        <td class="st-sides">\(\pi-u\)</td>
+                        <td class="st-splitting">\(I_{9}+I_{10b}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{21}\)</td>
+                        <td class="st-symbol">\((\frac{5}{2}\ 2\ \frac{5}{4})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-v\)</td>
+                        <td class="st-sides">\(\pi-2v\)</td>
+                        <td class="st-sides">\(\pi-v\)</td>
+                        <td class="st-splitting">\(I_{10b}+I_{11}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{22}\)</td>
+                        <td class="st-symbol">\((\frac{5}{2}\ \frac{3}{2}\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(2u\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u+v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u+v\)</td>
+                        <td class="st-splitting">\(2I_{11}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{23}\)</td>
+                        <td class="st-symbol">\((2\ \frac{5}{3}\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u-v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+v\)</td>
+                        <td class="st-splitting">\(I_{10a}+I_{13}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{26}\)</td>
+                        <td class="st-symbol">\((\frac{5}{3}\ \frac{5}{3}\ \frac{3}{2})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u+v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u+v\)</td>
+                        <td class="st-sides">\(\pi-2v\)</td>
+                        <td class="st-splitting">\(2I_{13}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{27}\)</td>
+                        <td class="st-symbol">\((2\ \frac{5}{3}\ \frac{5}{4})\)</td>
+                        <td class="st-sides">\(2v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+v\)</td>
+                        <td class="st-sides">\(\pi-v\)</td>
+                        <td class="st-splitting">\(I_{11}+I_{16}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{29}\)</td>
+                        <td class="st-symbol">\((2\ \frac{5}{2}\ \frac{5}{4})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u-v\)</td>
+                        <td class="st-sides">\(\pi-v\)</td>
+                        <td class="st-sides">\(\pi-u\)</td>
+                        <td class="st-splitting">\(I_{11}+I_{18b}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{32}\)</td>
+                        <td class="st-symbol">\((\frac{5}{3}\ \frac{3}{2}\ \frac{5}{4})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u-v\)</td>
+                        <td class="st-sides">\(\pi-2v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u+v\)</td>
+                        <td class="st-splitting">\(I_{14a}+I_{18a}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{34}\)</td>
+                        <td class="st-symbol">\((\frac{3}{2}\ \frac{3}{2}\ \frac{5}{4})\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u+v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}-u+v\)</td>
+                        <td class="st-sides">\(\pi-2u\)</td>
+                        <td class="st-splitting">\(2I_{17}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{38}\)</td>
+                        <td class="st-symbol">\((\frac{3}{2}\ \frac{5}{4}\ \frac{5}{4})\)</td>
+                        <td class="st-sides">\(2v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u+v\)</td>
+                        <td class="st-sides">\(\frac{\pi}{2}+u+v\)</td>
+                        <td class="st-splitting">\(2I_{19}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                    <tr>
+                        <td class="st-index">\(I_{42}\)</td>
+                        <td class="st-symbol">\((\frac{5}{4}\ \frac{5}{4}\ \frac{5}{4})\)</td>
+                        <td class="st-sides">\(\pi-2v\)</td>
+                        <td class="st-sides">\(\pi-2v\)</td>
+                        <td class="st-sides">\(\pi-2v\)</td>
+                        <td class="st-splitting">\(2I_{21}\)</td>
+                        <td class="st-relation">\(\)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
     </article>
+    <article>
+        <header>
+            <h2>付録II: 一様多面体</h2>
+        </header>
+        <p>
+
+        </p>
+        In tables 4 to 8, we list the seventy-five nondihedral uniform polyhedra, as well as the five pentagonal
+prisms and antiprisms, grouped by generating Schwarz triangles. For each polyhedron we indicate a figure
+
+number in this appendix, its Wythoff and vertex configuration symbols, and the values of its Euler charac-
+teristic χ and density D (if well-defined). Nonorientable polyhedra are marked by starring their character-
+istic. For reference, we indicate for each polyhedron a figure number in [CLM], pp. 439-448, and a model
+
+number in [W1]. The polyhedron names listed in tables 5 to 8 are taken from [W2], where they are attrib-
+uted to Norman W. Johnson, but note they sometimes vary among authors. Our figures represent wire-
+frame images of the listed uniform polyhedra and their duals (the latter are indicated by a starred figure
+
+number6
+
+). Although the figures are two dimensional, depth is faithfully represented by the variable thick-
+ness of the wires. The drawings were made using the UNIX7
+
+utility pic, from directives generated by
+
+kaleido (cf. [Ha]).
+    </article>
+    <aside>
+        <small id="annotation_6">
+
+        </small>
+        <small id="annotation_7">
+
+        </small>
+    </aside>
+    <section>
+        (table)*5
+    </section>
 </body>
 
 </html>

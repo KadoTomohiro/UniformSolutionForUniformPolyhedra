@@ -92,6 +92,10 @@
         .st-relation {
             min-width: 3rem;
         }
+
+        table.uniform-polyhedra tr {
+            border-bottom: 1px solid black;
+        }
     </style>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
     </script>
@@ -1265,7 +1269,7 @@
     </article>
     <aside>
         <small id="annotation_6">
-            6 図8 *、9 *、20 *、54 *、56 *、66 *、68 *、75 *、76 *、80 *の10個の無制限の多面体は、対応する[W2]とは異なります。 [W2] p. 103のより正確に表示された面を使用します。
+            6 図8 *、9 *、20 *、54 *、56 *、66 *、68 *、75 *、76 *、80 *の10個の無制限の多面体は、対応する[W2]とは異なります。[W2] p. 103のより正確に表示された面を使用します。
         </small>
         <small id="annotation_7">
             7 UNIXは、AT＆Tベル研究所の商標です。
@@ -1283,9 +1287,10 @@
                         <span>name</span>
                         <br>
                         <span class="dual">dual</span>
-                        <th class="up-euler-characteristic">\(\chi\)</th>
-                        <th class="up-density">\(D\)</th>
                     </th>
+                    <th class="up-euler-characteristic">\(\chi\)</th>
+                    <th class="up-density">\(D\)</th>
+                    <th class="up-refarence">ref</th>
                 </tr>
             </thead>
             <tbody>
@@ -1295,53 +1300,133 @@
                     <td class="up-symbol wythoff">\(2\ 5|2\)</td>
                     <td class="symbol vertex-structure">\((4.\ 4.\ 5)\)</td>
                     <td class="up-name">
-                        <span>五角柱 (pentagonal prism)</span>
+                        <span>正五角柱(pentagonal prism)</span>
                         <br>
-                        <span class="dual">双五角錐 (pentagonal dipyramid)</span>
+                        <span class="dual">双正五角錐(pentagonal dipyramid)</span>
                     </td>
                     <td class="up-euler-characteristic">\(2\)</td>
                     <td class="up-density">\(1\)</td>
+                    <th class="up-refarence"></th>
                 </tr>
                 <tr>
                     <td class="up-figre">2</td>
                     <td class="up-symbol wythoff">\(|2\ 2\ 5\)</td>
                     <td class="symbol vertex-structure">\((3.\ 3.\ 3.\ 5)\)</td>
                     <td class="up-name">
-                        <span>反五角柱 (pentagonal antiprism)</span>
+                        <span>反正五角柱(pentagonal antiprism)</span>
                         <br>
-                        <span class="dual">ねじれ双五角柱 (pentagonal deltohedron)</span>
+                        <span class="dual">反双正五角柱(pentagonal deltohedron)</span>
                     </td>
                     <td class="up-euler-characteristic">\(2\)</td>
                     <td class="up-density">\(1\)</td>
+                    <th class="up-refarence"></th>
                 </tr>
                 <tr>
-                    <td class="up-index">\(D_{\frac{2}{5}}\)</td>
+                    <td class="up-index" rowspan="2">\(D_{\frac{2}{5}}\)</td>
                     <td class="up-figre">3</td>
                     <td class="up-symbol wythoff">\(2\ \frac{2}{5}|2\)</td>
                     <td class="symbol vertex-structure">\((4.\ 4.\ \frac{5}{2})\)</td>
                     <td class="up-name">
-                        <span>星形五角柱 (pentagrammic prism)</span>
+                        <span>星形正五角柱(pentagrammic prism)</span>
                         <br>
-                        <span class="dual">双星形五角錐 (pentagrammic dipyramid)</span>
+                        <span class="dual">双星形正五角錐(pentagrammic dipyramid)</span>
                     </td>
                     <td class="up-euler-characteristic">\(2\)</td>
                     <td class="up-density">\(2\)</td>
+                    <th class="up-refarence"></th>
                 </tr>
                 <tr>
                     <td class="up-figre">4</td>
                     <td class="up-symbol wythoff">\(|2\ 2\ \frac{5}{2}\)</td>
-                    <td class="symbol vertex-structure">\((3.\ 3.\ 3\. \frac{5}{2})\)</td>
+                    <td class="symbol vertex-structure">\((3.\ 3.\ 3.\ \frac{5}{2})\)</td>
                     <td class="up-name">
-                        <span>反星形五角柱 (pentagrammic antiprism)</span>
+                        <span>反星形正五角柱(pentagrammic antiprism)</span>
                         <br>
-                        <span class="dual">ねじれ双星形五角錐 (pentagrammic deltohedron)</span>
+                        <span class="dual">反双星形正五角錐(pentagrammic deltohedron)</span>
+                    </td>
+                    <td class="up-euler-characteristic">\(2\)</td>
+                    <td class="up-density">\(2\)</td>
+                    <th class="up-refarence"></th>
+                </tr>
+                <tr>
+                    <td class="up-index">\(D_{\frac{3}{5}}\)</td>
+                    <td class="up-figre">5</td>
+                    <td class="up-symbol wythoff">\(2\ 2\ \frac{5}{3}\)</td>
+                    <td class="symbol vertex-structure">\((3.\ 3.\ 3.\ \frac{5}{3})\)</td>
+                    <td class="up-name">
+                        <span>交差反星形正五角柱(pentagrammic crossed antiprism)</span>
+                        <br>
+                        <span class="dual">交差反双星形正五角錐(pentagrammic concave deltohedron 
+                            )</span>
+                    </td>
+                    <td class="up-euler-characteristic">\(2\)</td>
+                    <td class="up-density">\(3\)</td>
+                    <th class="up-refarence"></th>
+                </tr>
+            </tbody>
+        </table>
+        <table class="uniform-polyhedra">
+            <caption>表5: 正四面体対称群一様多面体</caption>
+            <thead>
+                <tr>
+                    <th class="up-index"></th>
+                    <th class="up-figure">fig</th>
+                    <th class="up-symbol" colspan="2">symbol</th>
+                    <th class="up-name">
+                        <span>name</span>
+                        <br>
+                        <span class="dual">dual</span>
+                    </th>
+                    <th class="up-euler-characteristic">\(\chi\)</th>
+                    <th class="up-density">\(D\)</th>
+                    <th class="up-refarence">ref</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="up-index" rowspan="2">\(T_{1}\)</td>
+                    <td class="up-figre">6</td>
+                    <td class="up-symbol wythoff">\(3|2\ 3\)</td>
+                    <td class="symbol vertex-structure">\((3.\ 3.\ 3)\)</td>
+                    <td class="up-name">
+                        <span>正四面体(tetrahedron)</span>
+                        <br>
+                        <span class="dual">正四面体(tetrahedron)</span>
+                    </td>
+                    <td class="up-euler-characteristic">\(2\)</td>
+                    <td class="up-density">\(1\)</td>
+                    <td class="refarence">15, 1</td>
+                </tr>
+                <tr>
+                    <td class="up-figre">7</td>
+                    <td class="up-symbol wythoff">\(2\ 3|3\)</td>
+                    <td class="symbol vertex-structure">\((6.\ 6.\ 3)\)</td>
+                    <td class="up-name">
+                        <span>切頂四面体(truncated tetrahedron )</span>
+                        <br>
+                        <span class="dual">三方四面体(triakis tetrahedron)</span>
+                    </td>
+                    <td class="up-euler-characteristic">\(2\)</td>
+                    <td class="up-density">\(1\)</td>
+                    <td class="refarence">16, 6</td>
+                </tr>
+                <tr>
+                    <td class="up-index">\(T_{2}\)</td>
+                    <td class="up-figre">8</td>
+                    <td class="up-symbol wythoff">\(\frac{3}{2}\ 3|3\)</td>
+                    <td class="symbol vertex-structure">\((6.\ \frac{3}{2}).\ 6.\ 3\)</td>
+                    <td class="up-name">
+                        <span>八面半八面体(octahemioctahedron)</span>
+                        <br>
+                        <span class="dual">八面半八面クローン(octahemioctacron)</span>
                     </td>
                     <td class="up-euler-characteristic">\(\)</td>
                     <td class="up-density">\(\)</td>
+                    <td class="refarence"></td>
                 </tr>
                 <tr>
-                    <td class="up-index">\(D_{\frac{}{5}}\)</td>
-                    <td class="up-figre">5</td>
+                    <td class="up-index">\(T_{}\)</td>
+                    <td class="up-figre">9</td>
                     <td class="up-symbol wythoff">\(\)</td>
                     <td class="symbol vertex-structure">\(()\)</td>
                     <td class="up-name">
@@ -1351,6 +1436,7 @@
                     </td>
                     <td class="up-euler-characteristic">\(\)</td>
                     <td class="up-density">\(\)</td>
+                    <td class="refarence"></td>
                 </tr>
             </tbody>
         </table>
@@ -1358,11 +1444,11 @@
 
     table outlines
 
-    table.uniform-polyhedra>caption{表: 対称群一様多面体}+(thead>tr>(th.up-index+th.up-figure{fig}+th.up-symbol[colspan="2"]{symbol}+th.up-name>(span{name}+br+span.dual{dual}+th.up-euler-characteristic{\\(\\chi\\)}+th.up-density{\\(D\\)})))+tbody
+    table.uniform-polyhedra>caption{表5: 正四面体対称群一様多面体}+(thead>tr>(th.up-index+th.up-figure{fig}+th.up-symbol[colspan="2"]{symbol}+(th.up-name>(span{name}+br+span.dual{dual}))+th.up-euler-characteristic{\\(\\chi\\)}+th.up-density{\\(D\\)}+th.up-refarence{ref}))+tbody
 
     tabule body contents
 
-    (tr>td.up-index{\\(\\)}+td.up-figre{$}+td.up-symbol.wythoff{\\(\\)}+td.symbol.vertex-structure{\\(()\\)}+(td.up-name>span+br+span.dual)+td.up-euler-characteristic{\\(\\)}+td.up-density{\\(\\)})*5
+    (tr>td.up-index{\\(\\)}+td.up-figre{$}+td.up-symbol.wythoff{\\(\\)}+td.symbol.vertex-structure{\\(()\\)}+(td.up-name>span+br+span.dual)+td.up-euler-characteristic{\\(\\)}+td.up-density{\\(\\)}+td.refarence)*5
 </body>
 
 </html>
